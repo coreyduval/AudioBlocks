@@ -77,3 +77,9 @@ Search **AudioBlocks** on [MakerWorld](https://makerworld.com) to find them.
 The script downloads your actual Audible cover art directly from Amazon at high resolution and caches it in `~/Desktop/AudioBlocks/covers_cache/`. Books without a cover URL in the CSV get a colour-coded generated cover instead.
 
 Page counts are used to pick the right spine width. The script has a built-in lookup table for common titles; unknown titles default to 350 pages (medium spine).
+
+---
+
+## Credits
+
+Built with assistance from [Claude](https://claude.ai) by [Anthropic](https://anthropic.com).
