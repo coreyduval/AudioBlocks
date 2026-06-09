@@ -1,0 +1,4 @@
+reportlab
+Pillow
+requests
+pandas

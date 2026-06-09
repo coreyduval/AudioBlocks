@@ -1,0 +1,17 @@
+# Downloaded cover images (re-generated automatically)
+covers_cache/
+
+# Output folder
+AudioBlocks/
+
+# Audible CSV (contains personal library data — don't commit)
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
