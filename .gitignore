@@ -1,3 +1,9 @@
+# 3D model files and photos (hosted elsewhere)
+*.3mf
+*.jpg
+*.jpeg
+*.png
+
 # Downloaded cover images (re-generated automatically)
 covers_cache/
 
