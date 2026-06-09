@@ -55,6 +55,8 @@ Output is saved automatically to **~/Desktop/AudioBlocks/audiobook_covers.pdf**.
 - **Dashed white line** = fold here (spine edges).
 - Wrap around the 3D-printed book and glue or tape in place.
 
+**Pro tip:** After cutting, apply a [Scotch self-sealing laminating pouch](https://www.amazon.com/Scotch-Self-Sealing-Laminating-Pouches-LS854-10G/dp/B00004TS60) to the outside of the printed paper before wrapping. It adds a thin adhesive plastic layer that closely matches the finish of a real hardcover book.
+
 ---
 
 ## STL files
