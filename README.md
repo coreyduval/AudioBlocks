@@ -13,7 +13,7 @@ Each wrap is a single strip — **back cover | spine | front cover** — sized t
 | Python 3.8+ | [python.org](https://www.python.org/downloads/) |
 | Python packages | `pip install -r requirements.txt` |
 | Audible Library CSV | Instructions below |
-| 3D-printed mini books | [AudioBlocks on MakerWorld](https://makerworld.com/en/models/2908214-audioblocks) |
+| 3D-printed mini books | AudioBlocks on MakerWorld |
 
 ---
 
@@ -69,8 +69,6 @@ Four spine widths are available on MakerWorld to match any audiobook length:
 | `book_medium` | 6 mm | 251–400 pages |
 | `book_thick` | 8.5 mm | 401–550 pages |
 | `book_chonky` | 11 mm | 551+ pages |
-
-Download them at [makerworld.com/en/models/2908214-audioblocks](https://makerworld.com/en/models/2908214-audioblocks).
 
 ---
 
