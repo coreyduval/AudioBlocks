@@ -247,17 +247,17 @@ def trim_whitespace(img, threshold=245):
     return img.crop((max(0, bbox[0]-margin), max(0, bbox[1]-margin),
                      min(w, bbox[2]+margin), min(h, bbox[3]+margin)))
 
-def scale_with_bars(img, target_w_pts, target_h_pts, bg_color=(0, 0, 0)):
+def scale_to_fill(img, target_w_pts, target_h_pts):
+    """Scale the image to cover the whole panel, centre-cropping any overflow."""
     px_per_pt = PRINT_DPI / 72.0
     tw = max(1, int(target_w_pts * px_per_pt))
     th = max(1, int(target_h_pts * px_per_pt))
     iw, ih = img.size
-    scale = min(tw / iw, th / ih)
-    new_w, new_h = max(1, int(iw * scale)), max(1, int(ih * scale))
+    scale = max(tw / iw, th / ih)
+    new_w, new_h = max(tw, round(iw * scale)), max(th, round(ih * scale))
     resized = img.resize((new_w, new_h), Image.LANCZOS)
-    result = Image.new("RGB", (tw, th), bg_color)
-    result.paste(resized, ((tw - new_w) // 2, (th - new_h) // 2))
-    return result
+    left, top = (new_w - tw) // 2, (new_h - th) // 2
+    return resized.crop((left, top, left + tw, top + th))
 
 # ── Panel drawing ─────────────────────────────────────────────────────────────
 def draw_generated_cover(c, x, y, w, h, title, author):
@@ -286,8 +286,7 @@ def draw_generated_cover(c, x, y, w, h, title, author):
 def draw_front(c, x, y, w, h, title, author, pil_img):
     if pil_img is not None:
         try:
-            bg_rgb = tuple(int(v * 255) for v in hex_to_rgb(color_for(title)))
-            scaled = scale_with_bars(trim_whitespace(pil_img), w, h, bg_rgb)
+            scaled = scale_to_fill(trim_whitespace(pil_img), w, h)
             c.drawImage(ImageReader(scaled), x, y, w, h, mask=None)
             return
         except Exception:
